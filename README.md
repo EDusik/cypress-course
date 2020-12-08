@@ -24,6 +24,14 @@ npx create-react-app cypress-course
 ``` npm 
 npm install cypress
 ```
+<video autoplay="" loop="" muted="" playsinline="" controls="" class="" poster="/img/snippets/installing-global.1bc6d4fc.png" style="width:100%">
+  <source type="video/mp4" src="../cypress/videos/installing-global.mp4">
+</video>
+
+##### Finish Installing Cypress
+You can follow the step by step through this 
+<a href="https://docs.cypress.io/guides/getting-started/installing-cypress.html#yarn-add">tutorial</a>
+
 #### Install Mirage
 ``` npm 
 npm install --save-dev miragejs
@@ -39,5 +47,10 @@ npm start
 ```
 Open <a href="http://localhost:3000/">http://localhost:3000/</a>
 
+##### Run Cypress
 
+
+``` npx 
+npx cypress open
+```
 </div>
