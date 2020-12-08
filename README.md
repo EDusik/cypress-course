@@ -24,9 +24,7 @@ npx create-react-app cypress-course
 ``` npm 
 npm install cypress
 ```
-<video poster="./cypress/images/video.png" style="width:100%">
-  <source type="video/mp4" src="./cypress/videos/installing-global.mp4">
-</video>
+<img src="./cypress/images/installing-global.gif" width="50%"> 
 
 ##### Finish Installing Cypress
 You can follow the step by step through this 
