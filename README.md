@@ -24,7 +24,9 @@ npx create-react-app cypress-course
 ``` npm 
 npm install cypress
 ```
-<img src="./cypress/images/installing-global.gif" width="50%"> 
+<div align="center">
+  <img alt="Finish Installing Cypress" src="./cypress/images/installing-global.gif" width="75%"> 
+</div>
 
 ##### Finish Installing Cypress
 You can follow the step by step through this 
