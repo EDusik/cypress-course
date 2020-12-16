@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect,  useState } from 'react';
+import { getUser } from '../../services/api';
+
+import { Profile } from '../../styles/Profile/Profile';
 
 const About = () => {
+
+  const [state, setState] = useState({
+    profile: {}
+  });    
+
+  useEffect(() => {
+    getUser().then(response => {
+      setState(previousState => ({
+        ...previousState,
+        profile: response.data
+      }));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
   return (
-    <React.Fragment>
-      <h1>About</h1>
-    </React.Fragment>
+    <Profile>
+      <div className='profile'>          
+        <img type='image' data-test='avatar' src={state.profile.avatar_url} alt={state.profile.login} />
+        <h1>{state.profile.name}</h1>
+        <p>{state.profile.bio}</p>
+      </div>
+    </Profile>
   );
 }
 
