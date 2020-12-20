@@ -23,7 +23,7 @@ export default createGlobalStyle`
   #root {
     max-width: 1333px;
     margin: 0 auto;
-    padding: 0 20px 50px;
+    padding: 20px 0 20px 0px;
   }
 
   button {

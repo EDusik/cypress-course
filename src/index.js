@@ -8,9 +8,11 @@ import App from './App';
 import { ThemeProvider } from 'styled-components';
 import theme from './themes/theme';
 
-if ((window).Cypress) {
-  makeServer();
-}
+// if (!(window).Cypress && !(window).Cypress) {
+//   makeServer();
+// }
+
+makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
