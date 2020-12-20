@@ -1,3 +1,50 @@
-{
-
-}
+[
+  {
+    "id": 252761499,
+    "name": "be-the-hero",
+    "full_name": "EDusik/be-the-hero",
+    "html_url": "https://github.com/EDusik/be-the-hero",
+    "description": "📚 Node, React and React Native projects to support NGO based on OmniStack 11.0",
+    "language": "JavaScript"
+  },
+  {
+    "id": 235226877,
+    "name": "dev-radar",
+    "full_name": "EDusik/dev-radar",
+    "html_url": "https://github.com/EDusik/dev-radar",
+    "description": "📚 Node, React and React Native projects to find GitHub users by techs based on OmniStack 10.0",
+    "language": "JavaScript"
+  },
+  {
+    "id": 201122432,
+    "name": "dollynho-fighter",
+    "full_name": "EDusik/dollynho-fighter",
+    "html_url": "https://github.com/EDusik/dollynho-fighter",
+    "description": ":full_moon_with_face::melon: React project inspired by the legendary Brazilian character little Dolly ",
+    "language": "JavaScript"
+  },
+  {
+    "id": 240150618,
+    "name": "portfolio",
+    "full_name": "EDusik/portfolio",
+    "html_url": "https://github.com/EDusik/portfolio",
+    "description": ":rocket: My portfolio",
+    "language": "CSS"
+  },
+  {
+    "id": 292707620,
+    "name": "react-tetris",
+    "full_name": "EDusik/react-tetris",
+    "html_url": "https://github.com/EDusik/react-tetris",
+    "description": ":space_invader: Tetris game made with React",
+    "language": "JavaScript"
+  },
+  {
+    "id": 197776657,
+    "name": "sharing-data-angular",
+    "full_name": "EDusik/sharing-data-angular",
+    "html_url": "https://github.com/EDusik/sharing-data-angular",
+    "description": ":pencil: Examples of ways to share data with Angular",
+    "language": "TypeScript"
+  }
+]

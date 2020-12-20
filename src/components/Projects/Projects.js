@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getRepositories } from '../../services/api';
+import { Repositories } from '../../styles/Repositories/Repositories';
 
 const Projects = () => {
+
+  const emojis = require('emojis');
+  const [state, setState] = useState({
+    repositories: []
+  });
+
+  useEffect(() => {
+    getRepositories().then(response => {
+      setState(previousState => ({
+        ...previousState,
+        repositories: response.data
+      }));
+    }).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
   return (
-    <React.Fragment>
-      <h1>Projects</h1>
-    </React.Fragment>
+    <Repositories> 
+      <div className='repositories' data-test='repositories'>
+        {state.repositories.length > 0 ?
+          state.repositories.map((repo) => {
+            return (
+              <div className='repository' key={repo.id}>
+                <a href={repo.html_url} target='_blank' rel='noopener noreferrer' data-test={repo.name}>{repo.name}</a>
+                <i>{repo.full_name}</i>
+                <p>{emojis.unicode(repo.description)}</p>
+                <span className='language'>{repo.language}</span>
+              </div>
+            );
+          }) :
+          <p className='no-repo'>{emojis.unicode('Loading...')}</p>
+        }
+      </div>
+    </Repositories>
   );
 }
 
