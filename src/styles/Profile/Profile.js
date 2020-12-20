@@ -17,7 +17,7 @@ export const Profile = styled.div`
 
     h1 {
       color: ${props => props.theme.foreground};
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 400;
       line-height: 25px;
       letter-spacing: 5px;    
@@ -26,8 +26,8 @@ export const Profile = styled.div`
     }
 
     h2 {
-      color: ${props => props.theme.green};
-      font-size: 18px;
+      color: ${props => props.theme.comment};
+      font-size: 22px;
       font-weight: 700;
       text-transform: capitalize;      
       text-decoration: none;
@@ -36,20 +36,26 @@ export const Profile = styled.div`
     }
 
     span {
-      color: ${props => props.theme.yellow};
       font-size: 18px;
       text-align: center;     
       display: block;    
-      margin: 20px 0;
+      margin: 5px 0;
+      color: ${props => props.theme.purple};
     }
 
     p {
-      color: ${props => props.theme.orange};
+      color: ${props => props.theme.current_line};
       font-size: 18px;
       text-align: center;
-      max-width: 30%;     
+      max-width: 40%;     
       display: inline-flex;
-      margin: 0px 15px;
+      margin: 15px 0;
     }
+
+    @media (max-width: 1222px) {
+      p {
+        min-width: 80%; 
+      }
+    } 
   }
 `;
