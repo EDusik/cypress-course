@@ -24,7 +24,7 @@ describe("Cypress Test Integration: Component About", async () => {
     cy.get("[data-test='profile-bio']").should("contain", profile.bio);
   });
 
-  it("should show 'Loading' when you have a status 500 error response", () => {
+  it("should show 'Loading...' when you have a status 500 error response", () => {
     cy.server();
     cy.route({
       method: "GET",
