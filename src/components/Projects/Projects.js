@@ -4,7 +4,6 @@ import { Repositories } from '../../styles/Repositories/Repositories';
 
 const Projects = () => {
 
-  const emojis = require('emojis');
   const [state, setState] = useState({
     repositories: []
   });
@@ -28,13 +27,13 @@ const Projects = () => {
             return (
               <div className='repository' key={repo.id}>
                 <a href={repo.html_url} target='_blank' rel='noopener noreferrer' data-test={repo.name}>{repo.name}</a>
-                <i>{repo.full_name}</i>
-                <p>{emojis.unicode(repo.description)}</p>
-                <span className='language'>{repo.language}</span>
+                <i>{repo.full_name ? repo.full_name : ""}</i>
+                <p>{repo.description ? repo.description : ""}</p>
+                <span className='language'>{repo.language ? repo.language : ""}</span>
               </div>
             );
           }) :
-          <p className='no-repo'>{emojis.unicode('Loading...')}</p>
+          <p className='no-repo'>Loading...</p>
         }
       </div>
     </Repositories>
