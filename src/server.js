@@ -11,7 +11,7 @@ export function makeServer({ env = 'development' } = {}) {
     env,
     routes() {
       // https://api.github.com/users/<USERNAME>
-      this.get(`${environment.url}${environment.user}/`, () => profileGitHub);
+      this.get(`${environment.url}${environment.user}`, () => profileGitHub);
       // https://api.github.com/users/<USERNAME>/repos
       this.get(`${environment.url}${environment.user}/repos`, () => projectsGitHub);
     }
