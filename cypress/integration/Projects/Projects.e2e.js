@@ -38,4 +38,73 @@ describe("Cypress Test Integration: Component Project", async () => {
     cy.get("span").should("contain", repository[1].language);
   });
 
+  it("should show the correct info for repository[2]: 'dollynho-fighter'", () => {
+    cy.server();
+    cy.route(
+      "GET",
+      `${environment.url}${environment.user}`,
+      "fixture:projects/repositories.json"
+    );
+
+    cy.visit("/");
+     
+    cy.get('[data-test=dollynho-fighter]').should("contain", repository[2].name);
+    cy.get(':nth-child(3) > i').should("contain", repository[2].full_name);
+    cy.get(':nth-child(3) > p').should("contain", repository[2].description);
+    cy.get(':nth-child(3) > .language').should("contain", repository[2].language);
+  })
+
+  it("should show the correct info for repository[3]: 'portfolio'", () => {
+    cy.server();
+    cy.route(
+      "GET",
+      `${environment.url}${environment.user}`,
+      "fixture:projects/repositories.json"
+    );
+
+    cy.visit("/");
+     
+    cy.get('.repository').then(repo => {
+      cy.get(repo[3]).find("a").should("contain", repository[3].name);
+      cy.get(repo[3]).find("i").should("contain", repository[3].full_name);
+      cy.get(repo[3]).find("p").should("contain", repository[3].description);
+      cy.get(repo[3]).find("span").should("contain", repository[3].language);
+    });
+  });
+  
+  it("should show the correct info for repository[4]: 'react-tetris'", () => {
+    cy.server();
+    cy.route(
+      "GET",
+      `${environment.url}${environment.user}`,
+      "fixture:projects/repositories.json"
+    );
+
+    cy.visit("/");
+     
+    cy.get('.repository').then(repo => {
+      cy.get(repo[4]).find("a").should("contain", repository[4].name);
+      cy.get(repo[4]).find("i").should("contain", repository[4].full_name);
+      cy.get(repo[4]).find("p").should("contain", repository[4].description);
+      cy.get(repo[4]).find("span").should("contain", repository[4].language);
+    });
+  });
+
+  it("should show the correct info for repository[5]: 'sharing-data-angular'", () => {
+    cy.server();
+    cy.route(
+      "GET",
+      `${environment.url}${environment.user}`,
+      "fixture:projects/repositories.json"
+    );
+
+    cy.visit("/");
+     
+    cy.get('.repository').then(repo => {
+      cy.get(repo[5]).find("a").should("contain", repository[5].name);
+      cy.get(repo[5]).find("i").should("contain", repository[5].full_name);
+      cy.get(repo[5]).find("p").should("contain", repository[5].description);
+      cy.get(repo[5]).find("span").should("contain", repository[5].language);
+    });
+  });
 });
