@@ -11,6 +11,7 @@ This project uses these technologies:
 - [React](https://reactjs.org/)
 - [Cypress](https://www.cypress.io/)
 - [Mirage](https://miragejs.com/)
+- [Styled Components](https://styled-components.com/)
 </div>
 
 ### :computer: Dependencies
