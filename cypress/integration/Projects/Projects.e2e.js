@@ -1,4 +1,7 @@
 /* eslint-disable no-undef */
+
+/// <reference types="cypress" />
+
 import { environment } from "../../../src/environments/environments";
 import repository from "../../fixtures/projects/repositories.json";
 
