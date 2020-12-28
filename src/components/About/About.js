@@ -25,12 +25,12 @@ const About = () => {
   return (
     <Profile>
       <div className='profile'>
-        <img type='image' data-test='avatar' src={state.profile.avatar_url} alt={state.profile.login} />
+        <img type='image' data-test='avatar' data-cy='cy-avatar' src={state.profile.avatar_url} alt={state.profile.login} />
         <h1>{state.profile.name ? state.profile.name : ""}</h1>
         <h2>{state.profile.company ? state.profile.company : ""}</h2>
-        <span data-test='profile-create-at'>Create at: {formatDate(state.profile.created_at)}</span>
-        <span data-test='profile-updated-at'>Last update: {formatDate(state.profile.updated_at)}</span>
-        <p data-test='profile-bio'>{state.profile.bio ? state.profile.bio : ""}</p>
+        <span data-test='profile-create-at' data-cy='cy-profile-create-at'>Create at: {formatDate(state.profile.created_at)}</span>
+        <span data-test='profile-updated-at' data-cy='cy-profile-updated-at'>Last update: {formatDate(state.profile.updated_at)}</span>
+        <p data-test='profile-bio' data-cy='cy-profile-bio'>{state.profile.bio ? state.profile.bio : ""}</p>
       </div>
     </Profile>
   );
