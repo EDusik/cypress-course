@@ -1,10 +1,14 @@
 /* eslint-disable no-undef */
+
+/// <reference types="cypress" />
+
 import { environment } from "../../../src/environments/environments";
 import profile from "../../fixtures/about/profile.json";
 
 describe("Cypress Test Integration: Component About", async () => {
 
-  it("should show the correct profile data", () => {
+  // it.skip
+  it("should show the correct profile data and get items using 'data-test'", () => {
     cy.server();
     cy.route(
       "GET",
@@ -13,6 +17,7 @@ describe("Cypress Test Integration: Component About", async () => {
     );
 
     cy.visit("/");
+    // cy.goToTheHomePage();
 
     cy.get("[data-test='avatar']").should("have.attr", "alt").should("contain", profile.login);
     cy.get("[data-test='avatar']").should("have.attr", "src").should("contain", profile.avatar_url);
@@ -22,6 +27,26 @@ describe("Cypress Test Integration: Component About", async () => {
     cy.get("[data-test='profile-create-at']").should("contain", "08/04/2016");
     cy.get("[data-test='profile-updated-at']").should("contain", "08/12/2020");
     cy.get("[data-test='profile-bio']").should("contain", profile.bio);
+  });
+
+  it("should show the correct profile data and get items using 'data-cy'", () => {
+    cy.server();
+    cy.route(
+      "GET",
+      `${environment.url}${environment.user}`,
+      "fixture:about/profile.json"
+    );
+
+    cy.visit("/");
+
+    cy.get("[data-cy='cy-avatar']").should("have.attr", "alt").should("contain", profile.login);
+    cy.get("[data-cy='cy-avatar']").should("have.attr", "src").should("contain", profile.avatar_url);
+
+    cy.get("h1").should("contain", profile.name);
+    cy.get("h2").should("contain", profile.company);
+    cy.get("[data-cy='cy-profile-create-at']").should("contain", "08/04/2016");
+    cy.get("[data-cy='cy-profile-updated-at']").should("contain", "08/12/2020");
+    cy.get("[data-cy='cy-profile-bio']").should("contain", profile.bio);
   });
 
   it("should show 'Loading...' when you have a status 500 error response", () => {
