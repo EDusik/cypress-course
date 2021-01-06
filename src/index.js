@@ -8,7 +8,7 @@ import App from './App';
 import { ThemeProvider } from 'styled-components';
 import theme from './themes/theme';
 
-// if (!(window).Cypress && !(window).Cypress) {
+// if (!(window).Cypress && (window).Cypress) {
 //   makeServer();
 // }
 
