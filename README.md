@@ -1,10 +1,5 @@
 ## About
-<div id="about">
-
 Presentation about integration tests with <a href="https://www.cypress.io/">Cypress</a> given to the <a href="https://compassouol.com/">Compasso UOL</a> company.
-</div>
-
-<div id="tecnologies"> 
 
 ### :rocket: Technologies
 This project uses these technologies:
@@ -12,11 +7,8 @@ This project uses these technologies:
 - [Cypress](https://www.cypress.io/)
 - [Mirage](https://miragejs.com/)
 - [Styled Components](https://styled-components.com/)
-</div>
 
 ### :computer: Dependencies
-<div id="dependencies"> 
-
 #### Start React Project
 ``` npm
 npx create-react-app cypress-course
@@ -39,10 +31,8 @@ npm install --save-dev miragejs
 ```
 
 We can find a Mirage JS tutorial <a href="https://www.youtube.com/watch?v=3taVrGZVCr8&ab_channel=SamSelikoff">here</a>.
-</div>
 
 ### :zap: Commands
-<div id="commands">
 
 #### Run the project
 ``` npm 
@@ -52,8 +42,6 @@ Open <a href="http://localhost:3000/">http://localhost:3000/</a>
 
 ##### Run Cypress
 
-
 ``` npx 
 npx cypress open
 ```
-</div>
