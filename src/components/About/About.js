@@ -1,8 +1,9 @@
 import React, { useEffect,  useState } from 'react';
-import { getUser } from '../../services/api';
 
 import { Profile } from '../../styles/Profile/Profile';
 import { formatDate } from '../../utils/dateUtil';
+
+import { getUser } from '../../services/api';
 
 const About = () => {
 
