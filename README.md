@@ -3,7 +3,8 @@ Presentation about integration tests with <a href="https://www.cypress.io/">Cypr
 
 ### :rocket: Technologies
 
-This project uses these technologies:
+The following tools were used in this project:
+
 - [React](https://reactjs.org/)
 - [Cypress](https://www.cypress.io/)
 - [Mirage](https://miragejs.com/)
@@ -14,10 +15,12 @@ This project uses these technologies:
 ``` npm
 npx create-react-app cypress-course
 ```
+
 #### Install Cypress
 ``` npm 
 npm install cypress
 ```
+
 <div align="center">
   <img alt="Finish Installing Cypress" src=".github/installing-global.gif" width="75%"> 
 </div>
@@ -27,6 +30,7 @@ You can follow the step by step through this
 <a href="https://docs.cypress.io/guides/getting-started/installing-cypress.html#yarn-add">tutorial</a>
 
 #### Install Mirage
+
 ``` npm 
 npm install --save-dev miragejs
 ```
@@ -36,6 +40,7 @@ We can find a Mirage JS tutorial <a href="https://www.youtube.com/watch?v=3taVrG
 ### :zap: Commands
 
 #### Run the project
+
 ``` npm 
 npm start
 ```
