@@ -9,14 +9,13 @@ import repository from "../../fixtures/projects/repositories.json";
 describe("Cypress Test Integration: Component Project", async () => {
 
   it("should show the correct info for repository[0]: 'be-the-hero'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:projects/repositories.json"
     );
 
-    cy.visit("/");
+    cy.goToTheHomePage();
 
     cy.get('.repository').then(repo => {
       cy.get(repo[0]).should("contain", repository[0].name);
@@ -27,15 +26,14 @@ describe("Cypress Test Integration: Component Project", async () => {
   });
 
   it("should show the correct info for repository[1]: 'dev-radar'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:projects/repositories.json"
     );
 
-    cy.visit("/");
-     
+    cy.goToTheHomePage();
+
     cy.get("a").should("contain", repository[1].name);
     cy.get("i").should("contain", repository[1].full_name);
     cy.get("p").should("contain", repository[1].description);
@@ -43,15 +41,14 @@ describe("Cypress Test Integration: Component Project", async () => {
   });
 
   it("should show the correct info for repository[2]: 'dollynho-fighter'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:projects/repositories.json"
     );
 
-    cy.visit("/");
-     
+    cy.goToTheHomePage();
+
     cy.get('[data-test=dollynho-fighter]').should("contain", repository[2].name);
     cy.get(':nth-child(3) > i').should("contain", repository[2].full_name);
     cy.get(':nth-child(3) > p').should("contain", repository[2].description);
@@ -59,15 +56,14 @@ describe("Cypress Test Integration: Component Project", async () => {
   })
 
   it("should show the correct info for repository[3]: 'portfolio'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:projects/repositories.json"
     );
 
-    cy.visit("/");
-     
+    cy.goToTheHomePage();
+
     cy.get('.repository').then(repo => {
       cy.get(repo[3]).find("a").should("contain", repository[3].name);
       cy.get(repo[3]).find("i").should("contain", repository[3].full_name);
@@ -77,15 +73,14 @@ describe("Cypress Test Integration: Component Project", async () => {
   });
   
   it("should show the correct info for repository[4]: 'react-tetris'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:projects/repositories.json"
     );
 
-    cy.visit("/");
-     
+    cy.goToTheHomePage();
+
     cy.get('.repository').then(repo => {
       cy.get(repo[4]).find("a").should("contain", repository[4].name);
       cy.get(repo[4]).find("i").should("contain", repository[4].full_name);
@@ -95,15 +90,14 @@ describe("Cypress Test Integration: Component Project", async () => {
   });
 
   it("should show the correct info for repository[5]: 'sharing-data-angular'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:projects/repositories.json"
     );
 
-    cy.visit("/");
-     
+    cy.goToTheHomePage();
+
     cy.get('.repository').then(repo => {
       cy.get(repo[5]).find("a").should("contain", repository[5].name);
       cy.get(repo[5]).find("i").should("contain", repository[5].full_name);

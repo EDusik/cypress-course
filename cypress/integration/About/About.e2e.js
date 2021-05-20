@@ -7,18 +7,15 @@ import { environment } from "../../../src/environments/environments";
 import profile from "../../fixtures/about/profile.json";
 
 describe("Cypress Test Integration: Component About", async () => {
-
   // it.skip
   it("should show the correct profile data and get items using 'data-test'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:about/profile.json"
     );
 
-    cy.visit("/");
-    // cy.goToTheHomePage();
+    cy.goToTheHomePage();
 
     cy.get("[data-test='avatar']").should("have.attr", "alt").should("contain", profile.login);
     cy.get("[data-test='avatar']").should("have.attr", "src").should("contain", profile.avatar_url);
@@ -31,14 +28,13 @@ describe("Cypress Test Integration: Component About", async () => {
   });
 
   it("should show the correct profile data and get items using 'data-cy'", () => {
-    cy.server();
-    cy.route(
+    cy.intercept(
       "GET",
       `${environment.url}${environment.user}`,
       "fixture:about/profile.json"
     );
 
-    cy.visit("/");
+    cy.goToTheHomePage();
 
     cy.get("[data-cy='cy-avatar']").should("have.attr", "alt").should("contain", profile.login);
     cy.get("[data-cy='cy-avatar']").should("have.attr", "src").should("contain", profile.avatar_url);
@@ -51,8 +47,7 @@ describe("Cypress Test Integration: Component About", async () => {
   });
 
   it("should show 'Loading...' when you have a status 500 error response", () => {
-    cy.server();
-    cy.route({
+    cy.intercept({
       method: "GET",
       url: `${environment.url}${environment.user}`,
       status: 500,
@@ -61,7 +56,7 @@ describe("Cypress Test Integration: Component About", async () => {
       },
     });
 
-    cy.visit("/");
+    cy.goToTheHomePage();
     cy.get('.no-repo').should("contain", "Loading...")
   });
 });
