@@ -2,6 +2,7 @@
 Presentation about integration tests with <a href="https://www.cypress.io/">Cypress</a> given to the <a href="https://compassouol.com/">Compasso UOL</a> company.
 
 ### :rocket: Technologies
+
 This project uses these technologies:
 - [React](https://reactjs.org/)
 - [Cypress](https://www.cypress.io/)
@@ -18,7 +19,7 @@ npx create-react-app cypress-course
 npm install cypress
 ```
 <div align="center">
-  <img alt="Finish Installing Cypress" src="./src/assets/images/installing-global.gif" width="75%"> 
+  <img alt="Finish Installing Cypress" src="/github/installing-global.gif" width="75%"> 
 </div>
 
 ##### Finish Installing Cypress
