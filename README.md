@@ -19,7 +19,7 @@ npx create-react-app cypress-course
 npm install cypress
 ```
 <div align="center">
-  <img alt="Finish Installing Cypress" src="/github/installing-global.gif" width="75%"> 
+  <img alt="Finish Installing Cypress" src=".github/installing-global.gif" width="75%"> 
 </div>
 
 ##### Finish Installing Cypress
