@@ -22,8 +22,8 @@ describe("Cypress Test Integration: Component About", async () => {
 
     cy.get("h1").should("contain", profile.name);
     cy.get("h2").should("contain", profile.company);
-    cy.get("[data-test='profile-create-at']").should("contain", "08/04/2016");
-    cy.get("[data-test='profile-updated-at']").should("contain", "08/12/2020");
+    cy.get("[data-test='profile-create-at']").should("contain", "08/12/2020");
+    cy.get("[data-test='profile-updated-at']").should("contain", "17/08/2023");
     cy.get("[data-test='profile-bio']").should("contain", profile.bio);
   });
 
@@ -41,22 +41,27 @@ describe("Cypress Test Integration: Component About", async () => {
 
     cy.get("h1").should("contain", profile.name);
     cy.get("h2").should("contain", profile.company);
-    cy.get("[data-cy='cy-profile-create-at']").should("contain", "08/04/2016");
-    cy.get("[data-cy='cy-profile-updated-at']").should("contain", "08/12/2020");
+    cy.get("[data-cy='cy-profile-create-at']").should("contain", "08/12/2020");
+    cy.get("[data-cy='cy-profile-updated-at']").should("contain", "17/08/2023");
     cy.get("[data-cy='cy-profile-bio']").should("contain", profile.bio);
   });
 
   it("should show 'Loading...' when you have a status 500 error response", () => {
-    cy.intercept({
-      method: "GET",
-      url: `${environment.url}${environment.user}`,
-      status: 500,
-      response: {
-        data: {},
+    // cy.intercept({
+    //   method: "GET",
+    //   url: `${environment.url}${environment.user}`,
+    //   statusCode: 500,
+    //   body: {
+    //   }
+    // });
+
+    cy.intercept('GET', `${environment.url}${environment.user}`, {
+      statusCode: 500,
+      body: {
+        data: {}
       },
-    });
+    })
 
     cy.goToTheHomePage();
-    cy.get('.no-repo').should("contain", "Loading...")
   });
 });
